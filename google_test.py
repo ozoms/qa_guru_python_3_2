@@ -1,4 +1,3 @@
-import pytest
 from selene.support.shared import browser
 from selene import be, have
 
@@ -9,4 +8,3 @@ def test_google_search(open_browser, size_browser):
 def test_google_search_negative(open_browser, size_browser):
     browser.element('[name="q"]').should(be.blank).type(',mxhjdlkf;msj28jsbf757').press_enter()
     browser.element('.card-section').should(have.text('did not match any documents.'))
-
